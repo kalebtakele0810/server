@@ -9,14 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
 import com.aaupush.com.User;
 import com.aaupush.util.JsonSerializer;
-import com.aaupush.util.Request;
+import com.aaupush.util.UserRequest;
 import com.aaupush.util.Response;
 import com.aaupush.util.SessionFactoryGenerator;
+import com.aaupush.util.UserRequest;
 
 /**
  * Servlet implementation class UserServlet
@@ -37,15 +35,17 @@ public class UserServlet extends HttpServlet {
 		String requestString = "";
 		JsonSerializer js = new JsonSerializer();
 		Response rsp = new Response();
+		rsp.setStatus("False");
 		if ("POST".equalsIgnoreCase(request.getMethod())) {
 			requestString = (String) request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 		}
 		System.out.println("---------------------------" + requestString);
-		Request requestOBJ = (Request) js.stringToObject(requestString, Request.class);
+		UserRequest requestOBJ = (UserRequest) js.stringToObject(requestString, UserRequest.class);
 		if (requestOBJ.getOperation().equalsIgnoreCase("ADD")) {
 			Session session = SessionFactoryGenerator.getSessionFactory().openSession();
 			session.beginTransaction();
-			User user = (User) js.stringToObject(requestOBJ.getPayload(), User.class);
+			User user=new User();
+			user = requestOBJ.getPayload();
 			session.save(user);
 			session.getTransaction().commit();
 			rsp.setStatus("OK");

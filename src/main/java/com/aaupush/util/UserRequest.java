@@ -1,8 +1,10 @@
 package com.aaupush.util;
 
-public class Request {
+import com.aaupush.com.User;
+
+public class UserRequest {
 	String operation;
-	String payload;
+	User payload;
 
 	public String getOperation() {
 		return operation;
@@ -12,11 +14,11 @@ public class Request {
 		this.operation = operation;
 	}
 
-	public String getPayload() {
+	public User getPayload() {
 		return payload;
 	}
 
-	public void setPayload(String payload) {
+	public void setPayload(User payload) {
 		this.payload = payload;
 	}
 
