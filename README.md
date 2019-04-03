@@ -1,5 +1,11 @@
 #sample json string
 {
-  "operation": "ADD",
-  "payload": "{\n  \"Firstname\": \"test3\",\n  \"Lastname\": \"test3\",\n  \"Email\": \"test3\",\n  \"Password\": \"test3\",\n  \"Id\": 15\n}"
+   "operation":"ADD",
+   "payload":{
+      "Firstname":"jhgg",
+      "Lastname":"jgjhg",
+      "Email":"jhgjhg",
+      "Password":"jhgjg",
+      "Id":"1"
+   }
 }

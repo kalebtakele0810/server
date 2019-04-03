@@ -33,19 +33,47 @@ public class UserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String requestString = "";
+		/*
+		 * 
+		 * Json serializer converts json to java object and vise versa
+		 * 
+		 */
 		JsonSerializer js = new JsonSerializer();
+		/*
+		 * initialize response object,so that it will be filled with response
+		 * data
+		 */
 		Response rsp = new Response();
 		rsp.setStatus("False");
 		if ("POST".equalsIgnoreCase(request.getMethod())) {
+			/*
+			 * 
+			 * get request as string
+			 * 
+			 */
 			requestString = (String) request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 		}
 		System.out.println("---------------------------" + requestString);
+		/*
+		 * converts request string into UserRequest object
+		 * 
+		 */
 		UserRequest requestOBJ = (UserRequest) js.stringToObject(requestString, UserRequest.class);
 		if (requestOBJ.getOperation().equalsIgnoreCase("ADD")) {
+			/*
+			 * create user object then add it to the database,please refer to
+			 * the youtube tutorial
+			 * 
+			 */
 			Session session = SessionFactoryGenerator.getSessionFactory().openSession();
 			session.beginTransaction();
-			User user=new User();
+			User user = new User();
 			user = requestOBJ.getPayload();
+			/*
+			 * 
+			 * payload is the user object,please refer the README.md file in the
+			 * home directory to find a sample json string
+			 */
 			session.save(user);
 			session.getTransaction().commit();
 			rsp.setStatus("OK");
