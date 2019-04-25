@@ -1,11 +1,9 @@
 package com.aaupush.server;
 
-import com.aaupush.com.User;
 import com.aaupush.com.Student;
 import com.aaupush.util.JsonSerializer;
 import com.aaupush.util.Response;
 import com.aaupush.util.SessionFactoryGenerator;
-import com.aaupush.util.UserRequest;
 import com.aaupush.util.StudentRequest;
 import org.hibernate.Session;
 
@@ -41,16 +39,12 @@ public class SignUpServlet extends HttpServlet {
 			requestString = (String) request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
 		}
 
-		UserRequest requestOBJ = (UserRequest) js.stringToObject(requestString, UserRequest.class);
+		StudentRequest requestOBJ = (StudentRequest) js.stringToObject(requestString, StudentRequest.class);
 
 		if (requestOBJ.getOperation().equalsIgnoreCase("ADD")) {
 			Session session = SessionFactoryGenerator.getSessionFactory().openSession();
 			session.beginTransaction();
-			User user = new User();
-			user = requestOBJ.getPayload();
-			session.save(user);
 
-			StudentRequest requestOBJ2 = (StudentRequest) js.stringToObject(requestString, StudentRequest.class);
 			Student student = new Student();
 			Student= requestOBJ.getPayload();
 			session.save(student);

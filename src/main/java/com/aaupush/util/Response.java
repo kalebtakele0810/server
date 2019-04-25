@@ -2,7 +2,7 @@ package com.aaupush.util;
 
 public class Response {
 	String status;
-	String body;
+	Object body;
 
 	public String getStatus() {
 		return status;
@@ -12,11 +12,11 @@ public class Response {
 		this.status = status;
 	}
 
-	public String getBody() {
+	public Object getBody() {
 		return body;
 	}
 
-	public void setBody(String body) {
+	public void setBody(Object body) {
 		this.body = body;
 	}
 
