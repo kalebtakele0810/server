@@ -4,6 +4,20 @@
     <servlet>
         <description>
         </description>
+        <display-name>ClassServlet</display-name>
+        <servlet-name>ClassServlet</servlet-name>
+        <servlet-class>com.aaupush.server.ClassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassServlet</servlet-name>
+        <url-pattern>/ClassServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+
+    <servlet>
+        <description>
+        </description>
         <display-name>PostServlet</display-name>
         <servlet-name>PostServlet</servlet-name>
         <servlet-class>com.aaupush.server.PostServlet</servlet-class>
