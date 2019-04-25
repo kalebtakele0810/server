@@ -2,6 +2,30 @@
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     <display-name>server</display-name>
     <servlet>
+        <description>
+        </description>
+        <display-name>PostServlet</display-name>
+        <servlet-name>PostServlet</servlet-name>
+        <servlet-class>com.aaupush.server.PostServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PostServlet</servlet-name>
+        <url-pattern>/PostServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <description>
+        </description>
+        <display-name>SignUpServlet</display-name>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>com.aaupush.server.SignUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/SignupServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
     	<description>
     	</description>
     	<display-name>UserServlet</display-name>
