@@ -4,6 +4,20 @@
     <servlet>
         <description>
         </description>
+        <display-name>ReminderServlet</display-name>
+        <servlet-name>ReminderServlet</servlet-name>
+        <servlet-class>com.aaupush.server.ReminderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReminderServlet</servlet-name>
+        <url-pattern>/ReminderServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+
+    <servlet>
+        <description>
+        </description>
         <display-name>ForumServlet</display-name>
         <servlet-name>ForumServlet</servlet-name>
         <servlet-class>com.aaupush.server.ForumServlet</servlet-class>
