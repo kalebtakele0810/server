@@ -14,8 +14,6 @@
     </servlet-mapping>
 
     <servlet>
-
-    <servlet>
         <description>
         </description>
         <display-name>ReminderServlet</display-name>
@@ -26,8 +24,6 @@
         <servlet-name>ReminderServlet</servlet-name>
         <url-pattern>/ReminderServlet</url-pattern>
     </servlet-mapping>
-
-    <servlet>
 
     <servlet>
         <description>
@@ -42,8 +38,6 @@
     </servlet-mapping>
 
     <servlet>
-
-    <servlet>
         <description>
         </description>
         <display-name>ClassServlet</display-name>
@@ -54,8 +48,6 @@
         <servlet-name>ClassServlet</servlet-name>
         <url-pattern>/ClassServlet</url-pattern>
     </servlet-mapping>
-
-    <servlet>
 
     <servlet>
         <description>
